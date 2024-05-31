@@ -56,6 +56,10 @@ res1() {
 }
 netfilter-persistent
 clear
+rm -rf /opt/.ver
+serverV=$( curl -sS https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/versi  )
+echo $serverV > /opt/.ver
+clear
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e " \e[1;97;101m          UPDATE SCRIPT        \e[0m"
 echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
