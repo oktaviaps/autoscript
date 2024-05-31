@@ -1,0 +1,5 @@
+REPO="https://raw.githubusercontent.com/capmodzstore/x7/main/"
+
+
+
+wget -O /root/.config/rclone/rclone.conf "${REPO}Cfg/rclone.conf"
