@@ -1009,6 +1009,9 @@ systemctl restart xray
 systemctl restart udp-custom
 sleep 4
 clear
+serverV=$( curl -sS https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/versi  )
+echo $serverV > /opt/.ver
+clear
 echo ""
 echo ""
 echo ""
