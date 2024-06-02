@@ -34,7 +34,7 @@ wget -q -O /usr/bin/trialvmess "https://raw.githubusercontent.com/oktaviaps/auto
 wget -q -O /usr/bin/trialtrojan "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/menu/trialtrojan.sh" && chmod +x /usr/bin/trialtrojan
 wget -q -O /usr/bin/trialvless "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/menu/trialvless.sh" && chmod +x /usr/bin/trialvless
 wget -q -O /usr/bin/trialssh "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/menu/trialssh.sh" && chmod +x /usr/bin/trialssh
-wget -q -O /usr/bin/autocpu "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/install/autocpu.sh" && chmod +x /usr/bin/autocpu
+#wget -q -O /usr/bin/autocpu "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/install/autocpu.sh" && chmod +x /usr/bin/autocpu
 wget -q -O /usr/bin/bantwidth "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/install/bantwidth" && chmod +x /usr/bin/bantwidth
 wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/install/xp.sh" && chmod +x /usr/bin/xp
 echo -e " [INFO] Download File Successfully"
