@@ -117,21 +117,19 @@ fun_bar() {
     tput cnorm
 }
 res1() {
-    
 wget https://raw.githubusercontent.com/oktaviaps/autoscript/main/Cdy/menu.zip
-    wget -q -O /usr/bin/enc "https://raw.githubusercontent.com/oktaviaps/autoscript/main/Enc/encrypt" ; chmod +x /usr/bin/enc
-    7z x -pInstal menu.zip
-    chmod +x menu/*
-#    enc menu/*
-    mv menu/* /usr/bin
-    rm -rf menu
-    rm -rf menu.zip
-    rm -rf *.sh*
-    rm -rf /usr/bin/*~
-    rm -rf /usr/bin/gz*
-    rm -rf /usr/bin/*.bak
+wget -q -O /usr/bin/enc "https://raw.githubusercontent.com/oktaviaps/autoscript/main/Enc/encrypt" ; chmod +x /usr/bin/enc
+7z x -pInstal menu.zip
+chmod +x menu/*
+enc menu/*
+mv menu/* /usr/bin
+rm -rf menu
+rm -rf menu.zip
+rm -rf *.sh*
+rm -rf /usr/bin/*~
+rm -rf /usr/bin/gz*
+rm -rf /usr/bin/*.bak
 clear
-
 }
 echo -e ""
 echo -e "  \033[1;91m Update Script...\033[1;37m"
