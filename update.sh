@@ -1,68 +1,41 @@
 #!/bin/bash
-clear
-cd /usr/local/
-rm -rf sbin
-rm -rf /usr/bin/enc
-cd
-mkdir /usr/local/sbin
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
 biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
-red() { echo -e "\\033[32;1m${*}\\033[0m"; }
-clear
-fun_bar() {
-    CMD[0]="$1"
-    CMD[1]="$2"
-    (
-        [[ -e $HOME/fim ]] && rm $HOME/fim
-        ${CMD[0]} -y >/dev/null 2>&1
-        ${CMD[1]} -y >/dev/null 2>&1
-        touch $HOME/fim
-    ) >/dev/null 2>&1 &
-    tput civis
-    echo -ne "  \033[0;33mPlease Wait Loading \033[1;37m- \033[0;33m["
-    while true; do
-        for ((i = 0; i < 18; i++)); do
-            echo -ne "\033[0;32m# "
-            sleep 0.1s
-        done
-        [[ -e $HOME/fim ]] && rm $HOME/fim && break
-        echo -e "\033[0;33m]"
-        sleep 1s
-        tput cuu1
-        tput dl1
-        echo -ne "  \033[0;33mPlease Wait Loading \033[1;37m- \033[0;33m["
-    done
-    echo -e "\033[0;33m]\033[1;37m -\033[1;32m OK !\033[1;37m"
-    tput cnorm
-}
-res1() {
-#    wget https://raw.githubusercontent.com/oktaviaps/autoscript/main/Cdy/menu.zip
-#    wget -q -O /usr/bin/enc "https://raw.githubusercontent.com/oktaviaps/autoscript/main/Enc/encrypt" ; chmod +x /usr/bin/enc
-#    7z x -pInstal menu.zip
-    chmod +x menu/*
-    enc menu/*
-    mv menu/* /usr/local/sbin
-    rm -rf menu
-    rm -rf menu.zip
-    rm -rf *.sh*
-    rm -rf /usr/local/sbin/*~
-    rm -rf /usr/local/sbin/gz*
-    rm -rf /usr/local/sbin/*.bak
-    rm -rf /usr/local/sbin/m-noobz
-#    wget /usr/local/sbin "https://raw.githubusercontent.com/oktaviaps/autoscript/main/Cfg/m-noobz" 
-    cp m-noobz /usr/local/sbin
-    rm m-noobz*
-    chmod +x /usr/local/sbin/m-noobz
-}
-netfilter-persistent
-clear
-echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e " \e[1;97;101m          UPDATE SCRIPT        \e[0m"
-echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e ""
-echo -e "  \033[1;91m update script service\033[1;37m"
-fun_bar 'res1'
-echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e ""
-read -n 1 -s -r -p "Tekan [ Enter ] untuk kembali menu"
-menu
+###########- COLOR CODE -##############
+echo -e " [INFO] Downloading File"
+wget -q -O /usr/bin/add-ip-bot "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/bot/add-ip-bot.sh" && chmod +x /usr/bin/add-ip-bot
+wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/menu/menu.sh" && chmod +x /usr/bin/menu
+wget -q -O /usr/bin/m-trgo "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/menu/m-trgo.sh" && chmod +x /usr/bin/m-trgo
+wget -q -O /usr/bin/restore "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/menu/restore.sh" && chmod +x /usr/bin/restore
+wget -q -O /usr/bin/backup "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/menu/backup.sh" && chmod +x /usr/bin/backup
+wget -q -O /usr/bin/addnoobz "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/bot/addnoobz.sh" && chmod +x /usr/bin/addnoobz
+wget -q -O /usr/bin/cek-noobz "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/bot/cek-noobz.sh" && chmod +x /usr/bin/cek-noobz
+wget -q -O /usr/bin/m-noobz "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/menu/m-noobz.sh" && chmod +x /usr/bin/m-noobz
+wget -q -O /usr/bin/m-ip "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/menu/m-ip.sh" && chmod +x /usr/bin/m-ip
+wget -q -O /usr/bin/m-bot "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/menu/m-bot.sh" && chmod +x /usr/bin/m-bot
+wget -q -O /usr/bin/update "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/menu/update.sh" && chmod +x /usr/bin/update
+wget -q -O /usr/bin/m-theme "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/menu/m-theme.sh" && chmod +x /usr/bin/m-theme
+wget -q -O /usr/bin/m-vmess "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/menu/m-vmess.sh" && chmod +x /usr/bin/m-vmess
+wget -q -O /usr/bin/m-vless "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/menu/m-vless.sh" && chmod +x /usr/bin/m-vless
+wget -q -O /usr/bin/m-trojan "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/menu/m-trojan.sh" && chmod +x /usr/bin/m-trojan
+wget -q -O /usr/bin/m-system "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/menu/m-system.sh" && chmod +x /usr/bin/m-system
+wget -q -O /usr/bin/m-sshovpn "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/menu/m-sshovpn.sh" && chmod +x /usr/bin/m-sshovpn
+wget -q -O /usr/bin/m-ssws "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/menu/m-ssws.sh" && chmod +x /usr/bin/m-ssws
+wget -q -O /usr/bin/running "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/menu/running.sh" && chmod +x /usr/bin/running
+wget -q -O /usr/bin/m-backup "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/menu/m-backup.sh" && chmod +x /usr/bin/m-backup
+wget -q -O /usr/bin/m-update "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/menu/m-update.sh" && chmod +x /usr/bin/m-update
+wget -q -O /usr/bin/speedtest "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/speedtest_cli.py" && chmod +x /usr/bin/speedtest
+wget -q -O /usr/bin/bckpbot "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/menu/bckpbot.sh" && chmod +x /usr/bin/bckpbot
+wget -q -O /usr/bin/tendang "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/menu/tendang.sh" && chmod +x /usr/bin/tendang
+wget -q -O /usr/bin/bottelegram "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/menu/bottelegram.sh" && chmod +x /usr/bin/bottelegram
+wget -q -O /usr/bin/m-allxray "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/menu/m-allxray.sh" && chmod +x /usr/bin/m-allxray
+wget -q -O /usr/bin/xraylimit "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/menu/xraylimit.sh" && chmod +x /usr/bin/xraylimit
+wget -q -O /usr/bin/trialvmess "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/menu/trialvmess.sh" && chmod +x /usr/bin/trialvmess
+wget -q -O /usr/bin/trialtrojan "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/menu/trialtrojan.sh" && chmod +x /usr/bin/trialtrojan
+wget -q -O /usr/bin/trialvless "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/menu/trialvless.sh" && chmod +x /usr/bin/trialvless
+wget -q -O /usr/bin/trialssh "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/menu/trialssh.sh" && chmod +x /usr/bin/trialssh
+wget -q -O /usr/bin/autocpu "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/install/autocpu.sh" && chmod +x /usr/bin/autocpu
+wget -q -O /usr/bin/bantwidth "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/install/bantwidth" && chmod +x /usr/bin/bantwidth
+wget -q -O /usr/bin/xp "https://raw.githubusercontent.com/oktaviaps/autoscript-vvip/main/install/xp.sh" && chmod +x /usr/bin/xp
+echo -e " [INFO] Download File Successfully"
+exit
