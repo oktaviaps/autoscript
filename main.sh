@@ -34,7 +34,6 @@ echo -e "\033[96;1m           AUTOSCRIPT PREMIUM TUNNEL STORES              \033
 echo -e "${BIBlue}╰══════════════════════════════════════════╯${NC}"
 echo ""
 sleep 4
-
 echo -e "${BIBlue}╭══════════════════════════════════════════╮${NC}"
 echo -e "${BIBlue}│ ${BGCOLOR}             MASUKKAN NAMA KAMU         ${NC}${BIBlue} │${NC}"
 echo -e "${BIBlue}╰══════════════════════════════════════════╯${NC}"
@@ -48,7 +47,7 @@ echo ""
 clear
 author=$(cat /etc/profil)
 echo ""
-
+cd
 if [[ $( uname -m | awk '{print $1}' ) == "x86_64" ]]; then
 echo -e "${OK} Your Architecture Is Supported ( ${green}$( uname -m )${NC} )"
 else
@@ -91,10 +90,11 @@ echo -e "\e[32mloading...\e[0m"
 clear
 clear
 rm -f /usr/bin/user
-#echo "$username" >/usr/bin/user
+username=$(curl https://raw.githubusercontent.com/oktaviaps/permission/main/ip | grep $MYIP | awk '{print $2}')
+echo "$username" >/usr/bin/user
 expx=$(curl https://raw.githubusercontent.com/oktaviaps/permission/main/ip | grep $MYIP | awk '{print $3}')
 echo "$expx" >/usr/bin/e
-#username=$(cat /usr/bin/user)
+username=$(cat /usr/bin/user)
 oid=$(cat /usr/bin/ver)
 exp=$(cat /usr/bin/e)
 clear
@@ -138,9 +138,9 @@ echo -e "${ERROR} ${REDBG} $1 ${FONT}"
 }
 function print_success() {
 if [[ 0 -eq $? ]]; then
-echo -e "${BIBlue}╭════════════════════════════════════════════╮${NC}"
+echo -e "${green} =============================== ${FONT}"
 echo -e "${Green} # $1 berhasil dipasang"
-echo -e "${BIBlue}╰════════════════════════════════════════════╯${NC}"
+echo -e "${green} =============================== ${FONT}"
 sleep 2
 fi
 }
@@ -247,30 +247,29 @@ clear
 function pasang_domain() {
 echo -e ""
 clear
-echo -e "${BIBlue}╭════════════════════════════════════════════╮${NC}"
-echo -e "${BIBlue}│ ${BGCOLOR} PILIH DOMAIN KAMU...                 ${NC}${BIBlue} │${NC}"
-echo -e "${BIBlue}╰════════════════════════════════════════════╯${NC}"
-echo -e "${BIBlue}╭════════════════════════════════════════════╮${NC}"
-echo -e "${BIBlue}│ ${BGCOLOR} DOMAIN SENDIRI                 ${NC}${BIBlue} │${NC}"
-echo -e "${BIBlue}│ ${BGCOLOR} YANG PUNYA SCRIPT                 ${NC}${BIBlue} │${NC}"
-echo -e "${BIBlue}╰════════════════════════════════════════════╯${NC}"
+echo -e "    ----------------------------------"
+echo -e "   |\e[1;32mPlease Select a Domain Type Below \e[0m|"
+echo -e "    ----------------------------------"
+echo -e "     \e[1;32m1)\e[0m Your Domain"
+echo -e "     \e[1;32m2)\e[0m Random Domain "
+echo -e "   ------------------------------------"
 read -p "   Please select numbers 1-2 or Any Button(Random) : " host
 echo ""
 if [[ $host == "1" ]]; then
 clear
 echo ""
-echo -e "${BIBlue}╭══════════════════════════════════════════╮${NC}"
-echo -e "${BIBlue}│ ${BGCOLOR}  MASUKAN DOMAIN KAMU         ${NC}${BIBlue} │${NC}"
-echo -e "${BIBlue}╰══════════════════════════════════════════╯${NC}"
-
+echo ""
+echo -e "   \e[1;36m_______________________________$NC"
+echo -e "   \e[1;32m      CHANGES DOMAIN $NC"
+echo -e "   \e[1;36m_______________________________$NC"
 echo -e ""
 read -p "   INPUT YOUR DOMAIN :   " host1
-#echo -e "   \e[1;32mPlease Enter Your Name $NC"
+echo -e "   \e[1;32mPlease Enter Your Name $NC"
 #read -p "   Masukan User Script 12 Karakter: " nama
 echo "IP=" >> /var/lib/kyt/ipvps.conf
 echo $host1 > /etc/xray/domain
 echo $host1 > /root/domain
-echo $nama >> /etc/xray/username
+#echo $nama >> /etc/xray/username
 echo ""
 elif [[ $host == "2" ]]; then
 wget ${REPO}Fls/cf.sh && chmod +x cf.sh && ./cf.sh
@@ -752,7 +751,7 @@ echo enable service udp-custom
 systemctl enable udp-custom &>/dev/null
 print_success "Udp Custom Berhasil"
 clear
-print_install "INSTALL NOOBZVPNS"
+print_install "MEMASANG NOOBZVPNS"
 cd
 apt install git -y
 git clone https://github.com/sctunnel/noobzvpn.git
@@ -801,7 +800,7 @@ rm -f /root/cert.pem
 print_success "All Packet"
 }
 function menu(){
-  clear
+clear
 mkdir -p /etc/rmbl
 mkdir -p /etc/rmbl/theme
 cat <<EOF>> /etc/rmbl/theme/green
@@ -877,8 +876,12 @@ mv menu/* /usr/local/sbin
 rm -rf menu
 rm -rf menu.zip
 rm -rf /usr/local/sbin/*~
+rm -rf /usr/local/sbin/m-noobz
+#wget https://raw.githubusercontent.com/oktaviaps/autoscript/main/Cfg/m-noobz 
+#cp m-noobz /usr/local/sbin
+#rm m-noobz*
+#chmod +x /usr/local/sbin/m-noobz
 }
-
 function profile(){
 clear
 cat >/root/.profile <<EOF
@@ -1014,18 +1017,20 @@ sudo hostnamectl set-hostname $username
 clear
 echo -e ""
 echo -e ""
-echo -e "${BIBlue}╭════════════════════════════════════════════╮${NC}"
-echo -e "${BIBlue}│ ${BGCOLOR} INSTALL SCRIPT SELESAI..                 ${NC}${BIBlue} │${NC}"
-echo -e "${BIBlue}╰════════════════════════════════════════════╯${NC}"
+echo -e "\033[96m==========================\033[0m"
+echo -e "\033[92m      INSTALL SUCCES      \033[0m"
+echo -e "\033[96m==========================\033[0m"
 echo -e ""
-#sleep 2
-#clear
-#echo -e "\033[93;1m Wait inn 4 sec...\033[0m"
-#systemctl restart xray
-#systemctl restart udp-custom
-sleep 3
+sleep 2
+clear
+echo -e "\033[93;1m Wait inn 4 sec...\033[0m"
+systemctl restart xray
+systemctl restart udp-custom
+sleep 4
 clear
 echo ""
-read -p "Tekan [ ENTER ] Reboot Otomatis"
+echo ""
+echo ""
+read -p "Press [ Enter ]  To Reboot"
 clear
 reboot
