@@ -30,7 +30,7 @@ clear
 clear && clear && clear
 clear;clear;clear
 echo -e "${BIBlue}╭══════════════════════════════════════════╮${NC}"
-echo -e "\033[96;1m           AUTOSCRIPT PREMIUM TUNNEL STORES              \033[0m"
+echo -e "${BIBlue}│ ${BGCOLOR} WELCOME TO TUNNEL STORES            ${BIBlue} │${NC}"
 echo -e "${BIBlue}╰══════════════════════════════════════════╯${NC}"
 echo ""
 sleep 4
