@@ -3,7 +3,7 @@
 </p>
 
 ### FILTUR 🔥
-𝐕 𝟐.𝟎 𝐟𝐮𝐥𝐥 𝐚𝐮𝐭𝐨𝐦𝐚𝐭𝐢𝐜𝐚𝐥𝐥𝐲
+𝐕𝟐.𝟓 𝐅𝐮𝐥𝐥 𝐌𝐮𝐥𝐭𝐢, 𝐅𝐮𝐥𝐥 𝐀𝐮𝐭𝐨𝐦𝐚𝐭𝐢𝐜𝐚𝐥𝐥𝐲
 
 ![alt text](https://github.com/oktaviaps/permission/blob/main/install.jpg?raw=true)
 
