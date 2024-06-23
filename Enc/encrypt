@@ -8,32 +8,6 @@ export PURPLE='\033[0;35m'
 export CYAN='\033[0;36m'
 export LIGHT='\033[0;37m'
 export NC='\033[0m'
-data_ip="https://raw.githubusercontent.com/oktaviaps/permission/main/seler"
-ipsaya=$(wget -qO- ipinfo.io/ip)
-data_server=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
-date_list=$(date +"%Y-%m-%d" -d "$data_server")
-checking_sc() {
-  useexp=$(wget -qO- $data_ip | grep $ipsaya | awk '{print $3}')
-  if [[ $date_list < $useexp ]]; then
-    echo -ne
-  else
-echo -e " $COLOR1╭══════════════════════════════════════════════════════════╮${NC}"
-echo -e " $COLOR1│${NC} ${COLBG1}                ${WH}• PANNEL ADMIN VVIP •                   ${NC} $COLOR1│ $NC"
-echo -e " $COLOR1╰══════════════════════════════════════════════════════════╯${NC}"
-    echo -e ""
-echo -e "         $COLOR1╭══════════════════════════════════════════╮${NC}"
-echo -e "         $COLOR1      ${WH}HANYA TERSEDIA UNTUK ADMIN VVIP    ${NC}"
-echo -e "         $COLOR1    ${WH}Please Buy Permission In Your Admin   ${NC}"
-echo -e "         $COLOR1             ${WH}ADMIN CONTACT   ${NC}"
-echo -e "         $COLOR1         ${WH}Telegram: t.me/diwayaa    ${NC}"
-echo -e "         $COLOR1      ${WH}Whatsapp: wa.me/6281228861758    ${NC}"
-echo -e "         $COLOR1╰══════════════════════════════════════════╯${NC}"
-read -n 1 -s -r -p " [ Enter ] To Regristed"
-menu
-  fi
-}
-checking_sc
-clear
 PATH="/usr/bin:$PATH"
 x=`basename $0`
 if test $# = 0; then
