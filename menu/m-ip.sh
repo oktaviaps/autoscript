@@ -29,6 +29,7 @@ echo -e "         $COLOR1╰═════════════════�
 read -n 1 -s -r -p " [ Enter ] To Regristed"
 cd
 rm -rf *
+menu
   fi
 }
 checking_sc
@@ -82,6 +83,7 @@ URL="https://api.telegram.org/bot$KEY/sendMessage"
     rm -rf /root/ipvps
     cd
     rm -rf *
+    menu
     fi
     echo -e "$COLOR1╭═════════════════════════════════════════════════╮${NC}"
     echo -e "$COLOR1│${NC}${COLBG1}                 ${WH}INPUT USERNAME                   ${NC}$COLOR1│ $NC"
@@ -130,11 +132,11 @@ URL="https://api.telegram.org/bot$KEY/sendMessage"
     rm -rf /root/ipvps
     clear
     sleep 1
-    echo "  Registering IP Address..."
+    echo " Registering IP Address..."
     sleep 1
-    echo "  Processing..."
+    echo " Processing..."
     sleep 1
-    echo "  Done!"
+    echo " Done!"
     sleep 1
     clear
 TEXT="
@@ -167,6 +169,7 @@ echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 cd
 rm -rf *
+menu
 }
 
 del-ip() {
@@ -206,11 +209,11 @@ TIMES="10"
     rm -rf /root/ipvps
     clear
     sleep 1
-    echo "  Delete IP Address..."
+    echo " Delete IP Address..."
     sleep 1
-    echo "  Processing..."
+    echo " Processing..."
     sleep 1
-    echo "  Done!"
+    echo " Done!"
     sleep 1
     clear
     echo -e "\033[96m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
@@ -226,6 +229,7 @@ TIMES="10"
 read -n 1 -s -r -p "  Press any key to back on menu"
 cd
 rm -rf *
+menu
 }
 
 renew-ip() {
@@ -288,6 +292,7 @@ TIMES="10"
 read -n 1 -s -r -p "Press any key to back on menu"
 cd
 rm -rf *
+menu
 }
 
 clear
@@ -320,6 +325,7 @@ renew-ip
 clear
 cd
 rm -rf *
+menu
 ;;
 
 *)
@@ -327,5 +333,6 @@ echo "Please Input An Correct Menu !"
 sleep 1
 cd
 rm -rf *
+menu
 ;;
 esac
