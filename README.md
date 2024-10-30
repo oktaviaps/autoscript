@@ -1,2 +1,2 @@
 instalasi with bot
-t.me/autoscriptvpn_bot
+https://t.me/osprojectautoscript_bot
